@@ -1,0 +1,37 @@
+@import 'table';
+
+:host {
+    display: flex;
+    justify-content: space-between;
+
+    // Altera as propriedades da scrollbar
+    ::-webkit-scrollbar {
+        width: 7px;
+
+        // Componente de fazer o scroll
+        &-thumb {
+            background-color: rgba($cor-primaria, .6);
+            border-radius: 10px;
+        }
+
+        // Caminho que é feito o scroll
+        &-track {
+            background: transparent;
+        }
+    }
+
+    .painel-direito {
+        height: 100vh;
+    }
+
+    .lista {
+        padding: 0px 50px;
+        padding-bottom: 20px;
+        width: 100%;
+        // Define que o tamanho será 100% da tela
+        max-height: 100vh;
+        // Gera um scroll caso ultrapasse o tamanho da div
+        overflow-y: scroll;
+    }
+
+}

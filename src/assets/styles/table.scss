@@ -1,0 +1,86 @@
+@import 'variaveis';
+
+.table {
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    .play {
+        color: $cor-primaria;
+        font-size: .5rem;
+    }
+
+    .executando {
+        background-color: $branco;
+        padding: 10px;
+        box-shadow: 0px 0px 15px $preto-transparent-30;
+
+        td {
+            color: $cor-primaria;
+        }
+
+    }
+
+    // Cabeçalho da tabela
+    thead th {
+        font-size: .75rem;
+        font-weight: 600;
+        color: $preto-transparent-30;
+    }
+
+    th, td {
+        padding-right: 20px;
+        // Não deixa fazer a quebra de linha
+        white-space: nowrap;
+        // Esconde o que passar do tamanho
+        overflow: hidden;
+        // Coloca os 3 pontinhos para indicar que o texto continua
+        text-overflow: ellipsis;
+
+        // Seleciona o primeiro item da tag th e td
+        &:nth-child(1) {
+            padding-left: 10px;
+        }
+    }
+
+    // Linhas da tabela
+    tr {
+        // Quando passa o mouse encima da linha
+        &:hover {
+            cursor: pointer;
+
+            td{
+                color: $cor-primaria;
+            }
+        }
+
+        td {
+            padding: 10px 20px 10px 0px;
+            margin-top: 10px;
+            font-weight: 500;
+            font-size: .85rem;
+            color: $preto-transparent-70;
+
+            // Seleciona o primeiro item da tag th e td
+            &:nth-child(1) {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    // Pega o width de 5 a 50 (w-5, w-10 ...) para colocar como classe no html
+    .w {
+        @for $i from 1 to 10 {
+            $width: $i * 5;
+            &-#{ $width } {
+                width: #{ $width * 1% };
+            }
+        }
+    }
+
+    .direita {
+        text-align: right;
+    }
+
+}

@@ -1,0 +1,51 @@
+@import 'variaveis';
+
+:host {
+    input {
+        width: 100%;
+        padding: 10px 5px;
+        border-radius: 8px;
+        border-color: $preto-transparent-30;
+        // Retira a linha azul que o navegador coloca por padrão
+        outline: none;
+        color: $cor-primaria;
+        font-size: 1rem;
+        font-weight: 500;
+
+        &::placeholder {
+            color: $preto-transparent-30;
+            font-size: .85rem;
+        }
+
+        // Quando clica no input
+        &:focus, &:active {
+            // Quando clica no input fica com a borda verde
+            border-color: $cor-primaria;
+            border-width: 2px;
+        }
+    }
+
+    .sugestoes {
+        // Segue até o limite da div pra depois fazer a quebra de linha
+        flex-wrap: wrap;
+
+        span {
+            background-color: $branco;
+            margin-right: 5px;
+            padding: 5px 10px;
+            color: $preto-transparent-70;
+            border: 1px solid $preto-transparent-30;
+            margin-top: 10px;
+            font-size: .9rem;
+            border-radius: 20px;
+            cursor: pointer;
+
+            // Quando passa o mouse encima
+            &:hover {
+                background-color: rgba($cor-primaria, .8);
+                color: $branco;
+            }
+        }
+
+    }
+}

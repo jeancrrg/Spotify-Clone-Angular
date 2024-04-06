@@ -1,0 +1,33 @@
+@import 'variaveis';
+
+div {
+    padding: 5px 30px;
+    // Coloca um item em cada ponta com espaços iguais entre eles
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: $cor-primaria;
+    border-top: 1px solid $preto-transparent-20;
+
+    img {
+        // Define que a imagem será em tamanho fixo
+        flex-grow: 0;
+        width: 40px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    span {
+        flex-grow: 1;
+        margin-left: 20px;
+        font-size: .9rem;
+        font-weight: bold;
+    }
+
+    .icone {
+        flex-grow: 0;
+        cursor: pointer;
+    }
+
+}

@@ -1,0 +1,7 @@
+<button type="button" [class.selecionado]="selecionado" (click)="onClick">
+    <!-- Define que será passado um ícone para mostrar no botão -->
+    <ng-content></ng-content>
+
+    <!-- Define que será passado uma descrição para mostrar no botão -->
+    <span>{{ descricao }}</span>
+</button>

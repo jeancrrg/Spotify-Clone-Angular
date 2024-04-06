@@ -1,0 +1,41 @@
+@import 'variaveis';
+
+// Define que as priedades abaixo será para todo o componente
+:host {
+    display: block;
+    width: 100%;
+
+    button {
+        width: 100%;
+        border: 0px;
+        padding: 10px 0px 10px 20px;
+        border-radius: 5px;
+        text-align: left;
+        font-weight: 600;
+        font-size: .8rem;
+        color: $cor-primaria;
+        background-color: transparent;
+        cursor: pointer;
+
+        span {
+            // Define que ficará reto
+            display: inline-block;
+            // Define que ficará no meio
+            vertical-align: middle;
+            width: 150px;
+            // Define que não terá quebra de linha para o texto muito grande
+            white-space: nowrap;
+            margin-left: 15px;
+            // Caso o texto seja maior que o botão, esconde essa parte do texto
+            overflow: hidden;
+            // Coloca 3 pontinhos caso o texto seja muito grande
+            text-overflow: ellipsis;
+        }
+
+        &.selecionado {
+            background-color: $cor-primaria;
+            color: $branco;
+        }
+
+    }
+}

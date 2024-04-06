@@ -1,0 +1,36 @@
+@import 'variaveis';
+
+.container {
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 0px;
+
+    // Quando passa o mouse encima
+    &:hover {
+        background-color: $branco;
+    }
+
+    img {
+        width: 40px;
+        border-radius: 50%;
+        // Não sofre tamanho do flex
+        flex-grow: 0;
+    }
+
+    span {
+        color: $preto-transparent-70;
+        flex-grow: 1;
+        margin-left: 10px;
+        font-weight: 600;
+        font-size: .85rem;
+
+        // TRATAMENTO PARA TEXTOS MUITO GRANDES
+        // Não quebra linha
+        white-space: nowrap;
+        // Esconde o que exceder o tamanho
+        overflow: hidden;
+        // Coloca 3 pontinhos pra indicar que o texto está na frente
+        text-overflow: ellipsis;
+    }
+
+}

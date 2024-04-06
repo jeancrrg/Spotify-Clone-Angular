@@ -1,0 +1,101 @@
+@import 'variaveis';
+
+// Variáveis para controle de tamanho
+$h-spotify-logo: 120px;
+$h-menu-opcoes: 150px;
+$m-entre-menus: 10px;
+$h-footer-user: 70px;
+
+// Cálculo feito para definir o tamanho da div playlist-scroll para que fique de forma dinâmica
+$h-desconsiderar: calc($h-spotify-logo + $h-menu-opcoes + $h-footer-user);
+
+// Define todo o componente
+:host {
+    max-width: 300px;
+    // Tamanho inteiro da tela, mesma coisa que 1080px
+    min-height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    // Define que será um item abaixo do outro
+    flex-direction: column;
+    background-color: $cor-fundo2;
+    box-shadow: 1px 0px 15px #00000012;
+
+    .menus {
+        flex-grow: 1;
+        // Define que será um item abaixo do outro
+        flex-direction: column;
+        height: 100%;
+        padding: 0px 40px 0px 40px;
+
+        .image-container {
+            min-height: $h-spotify-logo;
+
+            img {
+                // Tamanho será 70% do tamanho do pai, que é 300px
+                width: 70%;
+            }
+        }
+
+        .menu-container {
+            // Tamanho será 100% do tamanho do pai, que é 300px
+            width: 100%;
+
+            &.flex {
+                // Define que será um abaixo do outro
+                flex-direction: column;
+                // Define que será do início
+                justify-content: flex-start;
+                // Todos os itens serão alinhados no centro
+                align-items: center;
+            }
+
+            &.opcoes {
+                min-height: $h-menu-opcoes;
+
+                // Define que tudo que estiver dentro da classe opções receberá as propriedades abaixo
+                * {
+                    margin-bottom: $m-entre-menus;
+                }
+            }
+
+            .playlist-titulo {
+                margin: 10px 0px;
+                // Ficará em primeiro de tudo
+                align-self: flex-start;
+                font-weight: bold;
+                font-size: .7rem;
+                color: $preto-transparent-30;
+            }
+
+            .playlist-scroll {
+                width: 100%;
+                // Define que o tamanho será 95% da tela - (tamanho da logo + tamanho do menu + tamanho do footer de usuário)
+                // OBS: Para garantir que fica de forma dinâmica para telas maiores também
+                max-height: calc(95vh - $h-desconsiderar);
+                // Gera a scrollbar juntamente com o overflow-y
+                overflow-y: auto;
+
+                // Esconde o scroll
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                * {
+                    margin-bottom: $m-entre-menus;
+                }
+            }
+        }
+    }
+
+    .usuario-info {
+        // Define que ficará fixo embaixo
+        flex-grow: 0;
+        display: block;
+        // Coloca a div embaixo da div pai
+        bottom: 0;
+        align-self: flex-end;
+        height: $h-footer-user;
+        width: 100%;
+    }
+}
