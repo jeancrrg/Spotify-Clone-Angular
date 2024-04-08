@@ -30,6 +30,7 @@ $h-desconsiderar: calc($h-spotify-logo + $h-menu-opcoes + $h-footer-user);
 
         .image-container {
             min-height: $h-spotify-logo;
+            cursor: pointer;
 
             img {
                 // Tamanho será 70% do tamanho do pai, que é 300px

@@ -27,7 +27,7 @@ export const usuarioEstaLogadoResolver = () => new Promise(async (res, rej) => {
     if (usuarioCriado) {
         res(true);
     } else {
-        res(naoAutenticado);
+        res(naoAutenticado());
     }
 
     return false;

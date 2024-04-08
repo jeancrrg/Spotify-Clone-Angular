@@ -33,4 +33,14 @@
         text-overflow: ellipsis;
     }
 
+    &.selecionado {
+        background-color: $cor-primaria;
+        border-radius: 20px;
+        padding: 5px;
+
+        span {
+            color: $branco;
+        }
+    }
+
 }

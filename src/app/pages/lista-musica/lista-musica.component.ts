@@ -14,13 +14,14 @@ import { PlayerService } from 'src/app/services/player.service';
 })
 export class ListaMusicaComponent implements OnInit, OnDestroy {
 
-    bannerImagemUrl = '';
-    bannerTexto = '';
-    musicas: IMusica[] = [];
+    imagemUrlBanner: string = '';
+    textoBanner: string = '';
+    listaMusicas: IMusica[] = [];
     musicaAtual: IMusica = newMusica();
-    playIcone = faPlay;
+    iconePlay: any = faPlay;
     listaSubscription: Subscription[] = [];
-    title: string = '';
+    titulo: string = '';
+    musicasArtista: boolean = false;
 
     constructor(
         private activedRoute: ActivatedRoute,
@@ -68,22 +69,36 @@ export class ListaMusicaComponent implements OnInit, OnDestroy {
 
     async obterDadosPlaylist(playlistId: string) {
         const playlistMusicas = await this.spotifyService.buscarMusicasPlaylist(playlistId);
+
         this.definirDadosPagina(playlistMusicas.nome, playlistMusicas.imagemUrl, playlistMusicas.musicas);
-        this.title = 'Músicas Playlist: ' + playlistMusicas.nome;
+        this.titulo = 'Músicas da Playlist: ' + playlistMusicas.nome;
     }
 
     async obterDadosArtistas(artistaId: string) {
+        const artista = await this.spotifyService.buscarMusicasArtista(artistaId);
 
+        this.definirDadosPagina(artista.nome, artista.imagemUrl, artista.listaMusicas);
+        this.titulo = 'Músicas do Artista: ' + artista.nome;
+        this.musicasArtista = true;
     }
 
     definirDadosPagina(bannerTexto: string, bannerImage: string, musicas: IMusica[]) {
-        this.bannerImagemUrl = bannerImage;
-        this.bannerTexto = bannerTexto;
-        this.musicas = musicas;
+        this.imagemUrlBanner = bannerImage;
+        this.textoBanner = bannerTexto;
+        this.listaMusicas = musicas;
     }
 
     async executarMusica(musica: IMusica) {
-        await this.spotifyService.executarMusica(musica.id);
+        let idMusica: string = '';
+
+        if (this.musicasArtista) {
+            // Implementado para poder executar a música do artista
+            idMusica = 'spotify:track:' + musica.id;
+        } else {
+            idMusica =  musica.id;
+        }
+
+        await this.spotifyService.executarMusica(idMusica);
         this.playerService.definirMusicaAtual(musica);
     }
 

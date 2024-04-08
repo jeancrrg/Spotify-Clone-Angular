@@ -1,9 +1,10 @@
+import { newMusica, newArtista } from 'src/app/common/factories';
+import { IArtista } from 'src/app/interfaces/IArtista';
 import { addMilliseconds, format } from "date-fns";
-import { IArtista } from "../interfaces/IArtista";
 import { IMusica } from "../interfaces/IMusica";
 import { IPlaylist } from "../interfaces/IPlaylist";
 import { IUsuario } from "../interfaces/IUsuario";
-import { newMusica, newPlaylist } from "./factories";
+import { newPlaylist } from "./factories";
 
 // OBS: É feito dessa forma para retirar a dependência do Spotify e passar a usar as interfaces do projeto
 
@@ -36,6 +37,47 @@ export function SpotifySinglePlaylistParaPlaylist(playlist: SpotifyApi.SinglePla
         imagemUrl: playlist.images.shift().url,
         musicas: []
     }
+}
+
+export function SpotifyArtistasTopTrackParaMusicas(artistaSpotify: SpotifyApi.ArtistsTopTracksResponse): IMusica[] {
+    let listaMusicas: IMusica[] = []
+
+    if (!artistaSpotify || artistaSpotify.tracks.length <= 0) {
+        return listaMusicas;
+    }
+
+    // Converte o tempo da música de milisegundos para minutos
+    const msParaMinutos = (tempoMs: number) => {
+        // Pega a data 0 sem nada e adiciona o tempo em milisegundos
+        const data = addMilliseconds(new Date(0), tempoMs);
+
+        return format(data, 'mm:ss');
+    }
+
+    let listaMusicasSpotify = artistaSpotify.tracks;
+    listaMusicasSpotify.forEach(musicaSpotify => {
+        let musica = newMusica();
+        musica.id = musicaSpotify.id,
+        musica.titulo =  musicaSpotify.name,
+
+        musicaSpotify.artists.forEach(artistaSpotify => {
+            let artista = newArtista();
+            artista.id = artistaSpotify.id,
+            artista.nome = artistaSpotify.name,
+            musica.artistas.push(artista)
+        })
+
+        musica.album = {
+            id: musicaSpotify.album.id,
+            nome: musicaSpotify.album.name,
+            imagemUrl: musicaSpotify.album.href
+        },
+        musica.tempo =  msParaMinutos(musicaSpotify.duration_ms)
+
+        listaMusicas.push(musica);
+    });
+
+    return listaMusicas;
 }
 
 export function SpotifyArtistaParaArtista(artista: SpotifyApi.ArtistObjectFull): IArtista {
