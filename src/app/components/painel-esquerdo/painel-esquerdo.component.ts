@@ -28,10 +28,6 @@ export class PainelEsquerdoComponent implements OnInit {
         this.buscarPlaylist();
     }
 
-    navegarParaHome() {
-        this.router.navigateByUrl('player/home');
-    }
-
     botaoClick(botao: string) {
         this.menuSelecionado = botao;
         this.router.navigateByUrl('player/home');
