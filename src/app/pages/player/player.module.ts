@@ -32,7 +32,8 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
         ArtistaItemImagemComponent,
         PlayerCardComponent,
         ListaMusicaComponent,
-        BannerComponent
+        BannerComponent,
+
    ],
     imports: [
         CommonModule,

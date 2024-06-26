@@ -1,27 +1,85 @@
-# AngularSpotifyClone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+![Logo](src/assets/images/logo-spotify-pequeno.png)
 
-## Development server
+# 👽 SPOTIFY CLONE
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Plataforma Angular de clone e redesign do Spotify, utilizando a API disponilizada pelo Spotify para desenvolvedores. Através desta
+API é possível vincular esta plataforma diretamente com a sua conta do Spotify, possibilitando a integração com principais playlists, músicas e artistas favoritos
+entre outras informações vinculadas a sua conta.
 
-## Code scaffolding
+![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Jasmine](https://img.shields.io/badge/jasmine-%238A4182.svg?style=for-the-badge&logo=jasmine&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Ambiente de desenvolvimento
 
-## Build
+O código fonte se encontra no repositório do Github:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+https://github.com/jeancrrg/clone-spotify
 
-## Running unit tests
+## 💻 Tecnologias utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+>Html → Linguagem de marcação de Hipertexto
 
-## Running end-to-end tests
+>Scss → Folha de estilo dos componentes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+>Typescript → Linguagem de programação
 
-## Further help
+>Angular 16 → Framework
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+>Node 20.14.10 → Framework
+
+>Npm 10.7.0 → Gerenciador de pacotes do Node
+
+>API do Spotify → API disponibilizada para desenvolvedores
+
+## 📝 Requisitos
+
+>Versão 16 do Angular
+
+>Versão do Node compatível a versão do Angular
+
+>Conta Premium do Spotify
+
+Para poder utilizar a plataforma é necessário que o usuário possua uma conta Premium no Spotify para que seja feita a conexão com o mesmo de forma corretamente.
+
+## 🛠️ Como rodar o projeto
+
+Ao importar o projeto, antes de subir localmente é necessário instalar as bibliotecas do projeto, para isso basta executar o seguinte comando no terminal:
+
+```properties
+npm install
+```
+
+Logo após a instalação das bibliotecas basta executar o seguinte comando para subir localmente:
+
+```properties
+npm start
+```
+
+Feito isso, abra o projeto no navegador:
+
+```properties
+http://localhost:4200/
+```
+
+## ⚙️ Como executar os testes
+
+Os testes são criados usando as bibliotecas Jasmine e Karma propriamente do Angular. 
+Para executar os testes basta rodar o seguinte comando no terminal:
+
+```properties
+npm test
+```
+
+Ao rodar esse comando será aberto uma nova janela onde serão rodados os testes criados.
+
+## 📌 Sobre a plataforma
+
+A plataforma foi desenvolvida pensando nos mínimos detalhes para os amantes da música. Com seu layout bastante intuitivo é bem fácil navegar pela vasta biblioteca musical com apenas alguns cliques. Esta plataforma realiza integrações diretamente com a conta do Spotify através de uma API liberada para desenvolvedores, ou seja, todas as playlists, músicas e artistas favoritos do Spotify estarão aqui. 
+
+![Layout-plataforma](src/assets/images/layout-plataforma.png)
