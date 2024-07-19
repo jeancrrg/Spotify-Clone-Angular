@@ -7,17 +7,17 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ArtistaItemImagemComponent implements OnInit {
 
+    // @Input = Define que essa variável poderá ser passada como parâmetro no html no formato []
     @Input()
     imagemSrc: string = '';
 
-    // Define que essa variável poderá ser passada como parâmetro no html no formato []
     @Input()
     descricao = '';
 
-    // Define que essa variável poderá ser passada como parâmetro no html no formato []
     @Input()
     selecionado = false;
 
+    // @Output = Define que essa variável será exposta para ser usada no html no formato ()
     @Output()
     click = new EventEmitter<void>();
 

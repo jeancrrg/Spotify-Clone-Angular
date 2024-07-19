@@ -5,8 +5,9 @@
     <div class="controles">
         <span> {{musica.titulo}} </span>
         <div class="botoes">
-            <fa-icon [icon]="anteriorIcone" (click)="voltarMusica()"></fa-icon>
-            <fa-icon [icon]="proximoIcone" (click)="proximaMusica()"></fa-icon>
+            <fa-icon [icon]="iconeAnterior" (click)="voltarMusica()"></fa-icon>
+            <fa-icon class="botao-player" [icon]="iconePlayer" (click)="definirEstadoMusica()"></fa-icon>
+            <fa-icon [icon]="iconeProximo" (click)="pularMusica()"></fa-icon>
         </div>
     </div>
 </div>

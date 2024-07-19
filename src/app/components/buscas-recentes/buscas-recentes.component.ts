@@ -1,3 +1,4 @@
+import { SpotifyService } from 'src/app/services/spotify-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +11,9 @@ export class BuscasRecentesComponent implements OnInit {
     pesquisasRecentes: string[] = ['Top Brasil', 'Top Global', 'Esquenta Sertanejo', 'Funk Hits', 'Pagodeira']
     campoPesquisa: string = '';
 
-    constructor() {
+    constructor(
+        private spotifyService: SpotifyService
+        ) {
     }
 
     ngOnInit(): void {
@@ -20,9 +23,8 @@ export class BuscasRecentesComponent implements OnInit {
         this.campoPesquisa = pesquisa;
     }
 
-    // Implementar busca
-    buscar() {
-
+    pesquisar() {
+        this.spotifyService.pesquisar(this.campoPesquisa, ['track', 'album', 'artist', 'playlist'], 10);
     }
 
 }

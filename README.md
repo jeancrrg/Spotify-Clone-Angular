@@ -14,12 +14,13 @@ entre outras informações vinculadas a sua conta.
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Jasmine](https://img.shields.io/badge/jasmine-%238A4182.svg?style=for-the-badge&logo=jasmine&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## 🚀 Ambiente de desenvolvimento
 
 O código fonte se encontra no repositório do Github:
 
-https://github.com/jeancrrg/clone-spotify
+https://github.com/jeancrrg/Spotify-Clone-Angular.git
 
 ## 💻 Tecnologias utilizadas
 

@@ -5,7 +5,7 @@ import { IMusica } from 'src/app/interfaces/IMusica';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SpotifyService } from 'src/app/services/spotify-service.service';
-import { PlayerService } from 'src/app/services/player.service';
+import { PlayerService } from 'src/app/services/player-service.service';
 
 @Component({
     selector: 'app-lista-musica',

@@ -3,7 +3,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { newMusica } from 'src/app/common/factories';
 import { IMusica } from 'src/app/interfaces/IMusica';
-import { PlayerService } from 'src/app/services/player.service';
+import { PlayerService } from 'src/app/services/player-service.service';
 import { SpotifyService } from 'src/app/services/spotify-service.service';
 
 @Component({

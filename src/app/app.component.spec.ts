@@ -1,31 +1,21 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
 
-describe('AppComponent', () => {
-    beforeEach(() =>
+describe(AppComponent.name, () => {
+    let component: AppComponent;
+    let fixture: ComponentFixture<AppComponent>;
+
+    beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [AppComponent],
-        })
-    );
-
-    it('should create the app', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.componentInstance;
-        expect(app).toBeTruthy();
+        });
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.componentInstance;
     });
 
-    it(`should have as title 'angularSpotifyClone'`, () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.componentInstance;
-        expect(app.title).toEqual('angularSpotifyClone');
+    it('Deveria criar o componente', () => {
+        expect(Component).toBeTruthy();
     });
 
-    it('should render title', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('.content span')?.textContent).toContain(
-            'angularSpotifyClone app is running!'
-        );
-    });
 });

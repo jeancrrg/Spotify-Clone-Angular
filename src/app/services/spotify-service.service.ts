@@ -145,13 +145,26 @@ export class SpotifyService {
         await this.spotifyApi.skipToPrevious();
     }
 
-    async proximaMusica() {
+    async pausarMusica() {
+        await this.spotifyApi.pause();
+    }
+
+    async despausarMusica() {
+        await this.spotifyApi.play();
+    }
+
+    async pularMusica() {
         await this.spotifyApi.skipToNext();
     }
 
     logout() {
         localStorage.clear();
         this.router.navigate(['/login']);
+    }
+
+    async pesquisar(campoPesquisa: string, tipoPesquisa: string[], limit: number) {
+        //const musicaPesquisa = await this.spotifyApi.search(campoPesquisa, tipoPesquisa, { limit });
+        //console.log('Música pesquisada: ', musicaPesquisa);
     }
 
 }

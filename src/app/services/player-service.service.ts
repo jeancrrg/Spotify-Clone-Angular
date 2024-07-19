@@ -43,8 +43,16 @@ export class PlayerService {
         await this.spotifyService.voltarMusica();
     }
 
-    async proximaMusica() {
-        await this.spotifyService.proximaMusica();
+    async pausarMusica() {
+        await this.spotifyService.pausarMusica();
+    }
+
+    async despausarMusica() {
+        await this.spotifyService.despausarMusica();
+    }
+
+    async pularMusica() {
+        await this.spotifyService.pularMusica();
     }
 
 }

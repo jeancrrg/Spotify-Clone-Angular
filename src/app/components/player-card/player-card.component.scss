@@ -19,7 +19,7 @@
 
     .controles {
         padding: 10px;
-        background-color: $preto-transparent-70;
+        background-color: $preto-transparent-80;
         // Faz ocupar todo o espaço disponível
         flex-grow: 1;
         color: $branco;
@@ -27,6 +27,12 @@
         span {
             font-size: .9rem;
             font-weight: bold;
+            // Não deixa fazer a quebra de linha
+            white-space: nowrap;
+            // Esconde o que passar do tamanho
+            overflow: hidden;
+            // Coloca os 3 pontinhos para indicar que o texto continua
+            text-overflow: ellipsis;
         }
 
         .botoes {
@@ -36,6 +42,8 @@
             // Coloca a mesma quantidade de espaço entre os botões
             justify-content: space-evenly;
             align-items: center;
+            //color: rgba($cor-primaria, .6);
+            color: $verde-claro;
 
             // Define somente para a classe botoes
             * {
